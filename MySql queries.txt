@@ -1,0 +1,26 @@
+1) MySql queries :
+
+	create table Video (ID int not null auto_increment, NAME varchar(50), DESCRIPTION varchar(100), ACTIVE varchar (10), PRIMARY KEY(ID));
+
+	create table VideoList (D_ID int not null auto_increment Primary Key, 
+	Name varchar (50), Link varchar(100), U_ID int not null , CONSTRAINT fk_td FOREIGN KEY(U_ID) REFERENCES Video(ID));
+
+	other queries are also used in main program
+
+
+2) These two tables will satisfy the one to many condition.
+
+3) CRUD operation were carried out in nodejs by exposing the express.js APIs.
+	 POST : To insert datas in database 
+	 GET : to get data, either all or by using /:id to get specific row
+	 DELETE : to delete datas either all or specific row by /:id
+	 PUT : updating datas in database
+  
+   Futher more, I only creted a form to insert values. I didn't create any UI for GET, DELETE, or POST. I used Postman to check my APIs.
+
+
+Pakages Installed :
+ express
+ bodyparser
+ mysql
+ nodemon
