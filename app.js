@@ -38,7 +38,7 @@ app.get('/videoinfo',(req, res)=>{
         if(!err){
             console.log(results)
             console.log(JSON.stringify(results));
-            // res.end(JSON.stringify(results))
+            
             res.send(results)
         }
         else{
@@ -55,9 +55,9 @@ app.get('/videoinfo/:id',(req, res)=>{
         if(!err){
             console.log(results)
             console.log(JSON.stringify(results));
-            // res.end(JSON.stringify(results))
+           
             res.send(results)
-            // res.render('home', {results})
+            
         }
         else{
             console.log(err)
@@ -114,9 +114,6 @@ app.post('/addlink',(req, res)=>{
             console.log(id)
             console.log('exists')
         }
-        // console.log(results[i].Name)
-        // console.log(results[1].Name)
-        // res.send(results.Name)
     }
     })
 })
@@ -137,13 +134,11 @@ app.delete('/videoDel/:id',(req, res)=>{
     db.query(querystring1,[req.params.id], (err, results)=>{
         if(!err){
             // console.log(results)
-          
-            // res.render('home', {results})
             db.query(querystring2, [req.params.id],(err, result)=>{
                 if(!err){
                     console.log(results)
                   return  res.send("deleted list")
-                    // res.render('home', {results})
+                   
                 }
                 else{
                     console.log(err)
